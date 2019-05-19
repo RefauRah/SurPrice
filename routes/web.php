@@ -19,4 +19,24 @@ Route::get('/hasil', function () {
     return view('hasil');
 });
 
+Route::get('/admin', function () {
+    return view('admina/base');
+});
+
+Route::get('/admin/produk', function () {
+    return view('produk/produk');
+});
+
+Route::get('/admin/produk/tambah_produk', function () {
+    return view('produk/tambah_produk');
+});
+
+Route::get('/admin/admin', function () {
+    return view('admina/admin');
+});
+
+Route::get('/admin/register', function () {
+    return view('admina/tambah_admin');
+});
+
 Route::post('/hasilsearch', 'produkController@search')->name('produk.search');
