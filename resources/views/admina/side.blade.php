@@ -19,6 +19,10 @@
                     <a href="{{url('/admin/produk')}}">
                         <i class="fas fa-table"></i>Produk</a>
                 </li>
+                <li>
+                    <a href="{{url('/admin/kategori')}}">
+                        <i class="fas fa-table"></i>Kategori Produk</a>
+                </li>
             </ul>
         </nav>
     </div>

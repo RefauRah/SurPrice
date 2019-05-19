@@ -9,45 +9,35 @@
                 <h3 class="text-center title-2">Tambah Produk</h3>
             </div>
             <hr>
-            <form action="" method="post" novalidate="novalidate">
+            <form action="{{route('produk.store')}}" enctype="multipart/form-data" method="post" novalidate="novalidate">
+            {{ csrf_field() }}
                 <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Nama Produk</label>
-                    <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
+                    <input id="cc-name" name="nama_produk" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group has-success">
-                    <label for="cc-name" class="control-label mb-1">Kategori Produk</label>
-                    <select name="cc-name" id="cc-name" class="form-control">
-                
-                        <option value="Pilih Kategori">Pilih Kategori</option>
-                        <option value="Pilih Kategori">Pilih Kategori2</option>
-                        <option value="Pilih Kategori">Pilih Kategori3</option>
-                        
-                    </select>
-                    <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                </div>
-                <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Asal Produk</label>
-                    <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
+                    <input id="cc-name" name="asal" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Link Produk</label>
-                    <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
+                    <input id="cc-name" name="link" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Gambar Produk</label>
-                    <input id="cc-name" name="cc-name" type="file" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
+                    <input id="cc-name" name="image" type="file" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Harga Produk</label>
-                    <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
+                    <input id="cc-name" name="harga" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>

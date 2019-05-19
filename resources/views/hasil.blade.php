@@ -114,45 +114,9 @@
 			@foreach ($data_produk as $produk)
 			<div class="grid1_of_3">
 				<a href="{{$produk->link}}">
-					<img src="{{URL::asset($produk->image)}}" alt=""/>
+					<img src="{{url('uploads/file/'.$produk->image)}}" alt="" style="width:300px;height:220px">
 					<h3>{{$produk->nama_produk}}</h3>
-					<br><h5>{{$produk->asal}}</h5></br>
-					<div class="price">
-						<h4>Rp {{$produk->harga}}</h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			@endforeach
-			
-			<div class="clear"></div>
-		</div>
-
-		<div class="grids_of_3">
-			@foreach ($data_produk2 as $produk)
-			<div class="grid1_of_3">
-				<a href="{{$produk->link}}">
-					<img src="{{URL::asset($produk->image)}}" alt=""/>
-					<h3>{{$produk->nama_produk}}</h3>
-					<br><h5>{{$produk->asal}}</h5></br>
-					<div class="price">
-						<h4>Rp {{$produk->harga}}</h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			@endforeach
-			
-			<div class="clear"></div>
-		</div>
-
-		<div class="grids_of_3">
-			@foreach ($data_produk3 as $produk)
-			<div class="grid1_of_3">
-				<a href="{{$produk->link}}">
-					<img src="{{URL::asset($produk->image)}}" alt=""/>
-					<h3>{{$produk->nama_produk}}</h3>
-					<br><h5>{{$produk->asal}}</h5></br>
+					<br><h5>{{$produk->asal}}</h5>
 					<div class="price">
 						<h4>Rp {{$produk->harga}}</h4>
 					</div>

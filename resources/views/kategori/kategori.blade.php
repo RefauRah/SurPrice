@@ -17,7 +17,7 @@
                     <i class="zmdi zmdi-filter-list"></i>filters</button>
             </div>
             <div class="table-data__tool-right">
-                <a href="{{route('produk.create')}}"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                <a href="{{route('kategori.create')}}"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                     <i class="zmdi zmdi-plus"></i>add item</button></a>
             </div>
         </div>
@@ -31,17 +31,16 @@
                                 <span class="au-checkmark"></span>
                             </label>
                         </th>
-                        <th>nama</th>
-                        <!-- <th>kategori</th> -->
-                        <th>asal</th>
-                        <th>link</th>
-                        <th>harga</th>
-                        <th>image</th>
+                        <th>NO</th>
+                        <th>nama kategori</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($produk as $item)
+                @php
+                    $no = 1;
+                @endphp
+                @foreach($kategori as $item)
                     <tr class="tr-shadow">
                         <td>
                             <label class="au-checkbox">
@@ -49,27 +48,19 @@
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>{{$item->nama_produk}}</td>
-                        <!-- <td>{{$item->kategori}}</td> -->
-                        <td>{{$item->asal}}</td>
-                        <td>{{$item->link}}</td>
-                        <td>{{$item->harga}}</td>
-                        <td><img src="{{  url('uploads/file/'.$item->image) }}" alt=""></td>
+                        <td>{{$no++}}</td>
+                        <td>{{$item->nama_kategori}}</td>
                         <td>
-                            <div class="table-data-feature">
-                            <form action="{{ route('produk.destroy',$item->id) }}" method="post">
+                                <form action="{{ route('kategori.destroy',$item->id) }}" method="post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <a href="{{ route('produk.edit',$item->id) }}" class="btn btn-info">Edit</a>
+                                    <a href="{{ route('kategori.edit',$item->id) }}" class="btn btn-info">Edit</a>
                                     <button type="submit" class="btn btn-danger">Hapus</button>
                                 </form>
-                                
-                            </div>
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
-               
             </table>
         </div>
     </div>
