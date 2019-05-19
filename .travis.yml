@@ -1,0 +1,29 @@
+sudo: required
+dist: trusty
+language: php
+
+# Versi php
+php:
+  - '7.2'
+  - '7.3'
+
+# Brance yang digunakan
+branches:
+  only:
+    - master # QA/Staging server
+    - development # DevServer
+
+services:
+  - docker
+
+# install Environment di OS
+before_install:
+  - composer install --no-interaction
+
+# Precompile
+before_script:
+  - 
+
+# Main Execution (Build)
+script:
+  - vendor/bin/phpunit
