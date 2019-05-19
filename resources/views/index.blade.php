@@ -72,6 +72,7 @@
 		<div class="logo">
 			<a href="index.html"><img src="{{ URL::asset('images/Surprice.png') }}" alt=""/> </a>
 		</div>
+	
 		<div class="h_search">
     		<form method="post" action="{{ route('produk.search') }}" enctype="multipart/form-data">
     			@csrf
@@ -263,11 +264,9 @@
 </style>
 <h4>Contact Us</h4>
 <ul class="f_nav">
-	<li><a href="https://www.instagram.com/moehtaroom27/">Reza Fauzi Rahman</a></li>
-	<li><a href="https://www.instagram.com/bo2ho_hrlambang/">Aldo Octaviandry Pramadiast</a></li>
-	<li><a href="https://www.instagram.com/fahniamsyari/">Agung Afrizal</a></li>
-	<li><a href="https://www.instagram.com/fahniamsyari/">Dian Lesmana</a></li>
-	<li><a href="https://www.instagram.com/fahniamsyari/">Raden Irham Catur P</a></li>
+	<li><a href="https://www.instagram.com/moehtaroom27/">Alwan Muhtarom</a></li>
+	<li><a href="https://www.instagram.com/bo2ho_hrlambang/">Eggi Herlambang</a></li>
+	<li><a href="https://www.instagram.com/fahniamsyari/">Fahni Amsyari</a></li>
 </ul>
 </div>
 <div class="clear"></div>

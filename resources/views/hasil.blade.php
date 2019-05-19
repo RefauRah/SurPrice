@@ -186,11 +186,11 @@
 }
 </style>
 <h4>Contact Us</h4>
-<!-- <ul class="f_nav">
+<ul class="f_nav">
 	<li><a href="https://www.instagram.com/moehtaroom27/">Alwan Muhtarom</a></li>
 	<li><a href="https://www.instagram.com/bo2ho_hrlambang/">Eggi Herlambang</a></li>
 	<li><a href="https://www.instagram.com/fahniamsyari/">Fahni Amsyari</a></li>
-</ul> -->
+</ul>
 </div>
 <div class="clear"></div>
 </div>

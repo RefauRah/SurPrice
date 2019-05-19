@@ -15,12 +15,6 @@ class produkController extends Controller
     public function index()
     {
         //
-        if(!Session::get('login')){
-            return redirect('login')->with('alert','Kamu harus login dulu');
-        }
-        else{
-            return view('index');
-        }
     }
 
     /**
