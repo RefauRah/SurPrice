@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produk;
+use App\Kategori;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class MasterProdukController extends Controller
 {
@@ -16,8 +19,13 @@ class MasterProdukController extends Controller
     public function index()
     {
         //
-        $produk = Produk::all();
-        return view('produk/produk',compact('produk'));
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            $produk = Produk::all();
+            return view('produk/produk',compact('produk'));
+        }
     }
 
     /**
@@ -28,7 +36,13 @@ class MasterProdukController extends Controller
     public function create()
     {
         //
-        return view('produk/tambah');
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            $kategori = Kategori::all();
+            return view('produk/tambah',compact('kategori'));
+        }
     }
 
     /**
@@ -42,6 +56,7 @@ class MasterProdukController extends Controller
         //
         $data = new Produk();
         $data->nama_produk = $request->get('nama_produk');
+        $data->id_kategori = $request->get('id_kategori');
         $data->asal = $request->get('asal');
         $data->link = $request->get('link');
         $data->harga = $request->get('harga');
@@ -76,8 +91,13 @@ class MasterProdukController extends Controller
     public function edit($id)
     {
         //
-        $produk = Produk::find($id);
-        return view('produk/edit',compact('produk'));
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            $produk = Produk::find($id);
+            return view('produk/edit',compact('produk'));
+        }
     }
 
     /**

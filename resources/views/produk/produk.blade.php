@@ -32,7 +32,7 @@
                             </label>
                         </th>
                         <th>nama</th>
-                        <!-- <th>kategori</th> -->
+                        <th>kategori</th>
                         <th>asal</th>
                         <th>link</th>
                         <th>harga</th>
@@ -50,7 +50,7 @@
                             </label>
                         </td>
                         <td>{{$item->nama_produk}}</td>
-                        <!-- <td>{{$item->kategori}}</td> -->
+                        <td>{{$item->nama_kategori}}</td>
                         <td>{{$item->asal}}</td>
                         <td>{{$item->link}}</td>
                         <td>{{$item->harga}}</td>

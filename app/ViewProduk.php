@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Produk extends Model
+class ViewProduk extends Model
 {
     //
     protected $table = 'produk';
@@ -12,6 +12,7 @@ class Produk extends Model
     protected $fillable = [
         'nama_produk',
         'id_kategori',
+        'nama_kategori',
         'asal',
         'link',
         'harga',

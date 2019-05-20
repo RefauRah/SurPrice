@@ -18,6 +18,15 @@
                     <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group has-success">
+                <label for="cc-name" class="control-label mb-1">kategori</label>
+                <select name="id_kategori" id="" class="form-control">
+                <option value="Pilih Kategori">Pilih Kategori</option>
+                    @foreach($kategori as $kat)
+                    <option value="{{ $kat->id }}">{{ $kat->nama_kategori }}</option>
+                    @endforeach
+                </select>
+                </div>
+                <div class="form-group has-success">
                     <label for="cc-name" class="control-label mb-1">Asal Produk</label>
                     <input id="cc-name" name="asal" type="text" class="form-control cc-name valid"  data-val="true" data-val-required="Please enter the name"
                         autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">

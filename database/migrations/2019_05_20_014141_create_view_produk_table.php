@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMasterProdukTable extends Migration
+class CreateViewProdukTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateMasterProdukTable extends Migration
      */
     public function up()
     {
-        Schema::create('master_produk', function (Blueprint $table) {
+        Schema::create('view_produk', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_produk');
-            //$table->unsignedInteger('id_kategori');
+            $table->unsignedInteger('id_kategori');
+            $table->unsignedInteger('nama_kategori');
             $table->string('asal');
             $table->string('link');
             $table->string('harga');
-            $table->text('image');
-            //$table->foreign('id_kategori')->references('id')->on('kategori')->onUpdate('cascade');
+            $table->text('image')->nullable();
+            $table->foreign('id_kategori')->references('id')->on('kategori')->onUpdate('cascade');
+            $table->foreign('nama_kategori')->references('id')->on('kategori')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ class CreateMasterProdukTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('master_produk');
+        Schema::dropIfExists('view_produk');
     }
 }

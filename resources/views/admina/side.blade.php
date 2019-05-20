@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="index.html">
+        <a href="{{ url('/admin') }}">
             <img src="{{url('/assets/admin/images/icon/logo.png')}}" alt="Cool Admin" />
         </a>
     </div>
@@ -8,7 +8,7 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
-                    <a href="index.html">
+                    <a href="{{url('/admin')}}">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li>

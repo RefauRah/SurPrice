@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Kategori;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class KategoriController extends Controller
 {
@@ -16,9 +18,13 @@ class KategoriController extends Controller
     public function index()
     {
         //
-        $kategori=Kategori::all();
-        return view('kategori/kategori',compact('kategori'));
-
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            $kategori=Kategori::all();
+            return view('kategori/kategori',compact('kategori'));
+        }
     }
 
     /**
@@ -29,7 +35,12 @@ class KategoriController extends Controller
     public function create()
     {
         //
-        return view('kategori/tambah');
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            return view('kategori/tambah');
+        }
     }
 
     /**
@@ -67,8 +78,13 @@ class KategoriController extends Controller
     public function edit($id)
     {
         //
-        $kategori=Kategori::find($id);
-        return view('kategori/edit',compact('kategori'));
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            $kategori=Kategori::find($id);
+            return view('kategori/edit',compact('kategori'));
+        }
     }
 
     /**
